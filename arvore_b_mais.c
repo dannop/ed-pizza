@@ -15,26 +15,27 @@ int busca(int cod, char *nome_arquivo_metadados, char *nome_arquivo_indice, char
 {
 	TMetadados* meta = le_arq_metadados(nome_arquivo_metadados);
     
-    // >= - ESQUERDA e < - DIREITA
-    if(meta->raiz_folha) return meta->pont_raiz;
+    if(meta->raiz_folha) return meta->pont_raiz; // Se o no raiz (lido no metadado) ja for folha 
     else{
-        int folha = -1;
+        int folha = -1; // Usando -1 pois nunca sera uma posicao dentro do arquivo
         int no_atual = meta->pont_raiz;
         FILE* arq_indices = fopen(nome_arquivo_indice, "rb");
         
-        while(folha == -1){
+        while(folha == -1){ // Enquanto folha nao for uma posicao dentro do arquivo
+            fseek(arq_indices, no_atual, 0);
             TNoInterno* pagina = le_no_interno(d, arq_indices);
             int i;
-            for(i = 0; cod >= pagina->chaves[i] && i <= pagina->m; i++);
-            if(pagina->aponta_folha) folha = pagina->p[i];
-            else no_atual = pagina->p[i];
+            for(i = 0; cod >= pagina->chaves[i] && i < pagina->m; i++); // Apenas para conseguir mudar o i (numero para descer na arvore)
+            if(pagina->aponta_folha){
+                folha = pagina->p[i];
+            }else{
+                no_atual = pagina->p[i];
+            }
         }
 
         fclose(arq_indices);
         return folha;
     }
-
-    return INT_MAX;
 }
 
 int insere(int cod, char *nome, char *descricao, float preco, char *nome_arquivo_metadados, char *nome_arquivo_indice, char *nome_arquivo_dados, int d)
