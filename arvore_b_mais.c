@@ -25,7 +25,7 @@ int busca(int cod, char *nome_arquivo_metadados, char *nome_arquivo_indice, char
             fseek(arq_indices, no_atual, 0);
             TNoInterno* pagina = le_no_interno(d, arq_indices);
             int i;
-            for(i = 0; cod >= pagina->chaves[i] && i < pagina->m; i++); // Apenas para conseguir mudar o i (numero para descer na arvore)
+            for(i = 0; cod >= pagina->chaves[i] && i < pagina->m; i++); // Apenas para conseguir mudar o i (numero para andar no interno)
             if(pagina->aponta_folha) folha = pagina->p[i]; // Se for folha, salva e termina busca
             else no_atual = pagina->p[i]; // Se nao for, continua para o proximo
         }
