@@ -30,7 +30,7 @@ int busca(int cod, char *nome_arquivo_metadados, char *nome_arquivo_indice, char
             else no_atual = pagina->p[i]; // Se nao for, continua para o proximo
         }
 
-        fclose(arq_indices);
+        fclose(arq_indices);	
         return folha;
     }
 }

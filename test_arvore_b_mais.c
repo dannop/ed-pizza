@@ -5,7 +5,7 @@
 
 #define NOME_ARQUIVO_METADADOS "metadados.dat"
 #define NOME_ARQUIVO_INDICE "indice.dat"
-#define NOME_ARQUIVO_DADOS "clientes.dat"
+#define NOME_ARQUIVO_DADOS "pizzas.dat"
 #define NOME_ARQUIVO_INICIAL "dados_iniciais.dat"
 #define D 2
 
@@ -172,7 +172,7 @@ void monta_arvore_h2() {
     );
     salva_nos_internos(D, NOME_ARQUIVO_INDICE, tabIndice);
 
-    // Estrutura do No Folha: pont_pai, pont_prox, m, registros de clientes
+    // Estrutura do No Folha: pont_pai, pont_prox, m, registros de pizzas
     TListaNosFolhas *tabDados = cria_nos_folhas(D, 3,
                                                 cria_no_folha(D, 0, 1 * tamanho_no_folha(D), 2,
                                                               pizza(10, "Calabresa", "Salgada", 30),
@@ -213,7 +213,7 @@ void monta_arvore_h2_cheia() {
     );
     salva_nos_internos(D, NOME_ARQUIVO_INDICE, tabIndice);
 
-    // Estrutura do No Folha: pont_pai, pont_prox, m, registros de clientes
+    // Estrutura do No Folha: pont_pai, pont_prox, m, registros de pizzas
     TListaNosFolhas *tabDados = cria_nos_folhas(D, 3,
                                                 cria_no_folha(D, 0, 1 * tamanho_no_folha(D), 2,
                                                               pizza(10, "Calabresa", "Salgada", 30),
@@ -259,7 +259,7 @@ void monta_arvore_h2_completa() {
     );
     salva_nos_internos(D, NOME_ARQUIVO_INDICE, tabIndice);
 
-    // Estrutura do No Folha: pont_pai, pont_prox, m, registros de clientes
+    // Estrutura do No Folha: pont_pai, pont_prox, m, registros de pizzas
     TListaNosFolhas *tabDados = cria_nos_folhas(D, 5,
                                                 cria_no_folha(D, 0, 1 * tamanho_no_folha(D), 2,
                                                               pizza(10, "Calabresa", "Salgada", 30),
@@ -321,7 +321,7 @@ void monta_arvore_h3() {
     );
     salva_nos_internos(D, NOME_ARQUIVO_INDICE, tabIndice);
 
-    // Estrutura do No Folha: pont_pai, pont_prox, m, registros de clientes
+    // Estrutura do No Folha: pont_pai, pont_prox, m, registros de pizzas
     TListaNosFolhas *tabDados = cria_nos_folhas(D, 6,
                                                 cria_no_folha(D, 1 * tamanho_no_interno(D), 1 * tamanho_no_folha(D), 2,
                                                               pizza(10, "Calabresa", "Salgada", 30),

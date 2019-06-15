@@ -42,7 +42,7 @@ int cmp_no_folha(int d, TNoFolha *n1, TNoFolha *n2);
 // Retorna tamanho do noh folha em bytes
 int tamanho_no_folha(int d);
 
-// Libera noh folha e clientes
+// Libera noh folha e pizzas
 void libera_no_folha(int d, TNoFolha *no);
 
 #endif
