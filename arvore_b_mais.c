@@ -30,12 +30,12 @@ int busca(int cod, char *nome_arquivo_metadados, char *nome_arquivo_indice, char
             else no_atual = pagina->p[i]; // Se nao for, continua para o proximo
         }
 
-        fclose(arq_indices);	
+        fclose(arq_indices);
         return folha;
     }
 }
 
-int insere(int cod, char *nome, char *descricao, float preco, char *nome_arquivo_metadados, char *nome_arquivo_indice, char *nome_arquivo_dados, int d)
+int insere(int cod, char *nome, char *categoria, float preco, char *nome_arquivo_metadados, char *nome_arquivo_indice, char *nome_arquivo_dados, int d)
 {
 	//TODO: Inserir aqui o codigo do algoritmo de insercao
     return INT_MAX;
